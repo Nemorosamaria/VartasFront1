@@ -3,23 +3,47 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <!--[if lt IE 9]>
+         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 </head>
 <body>
+    <!-- Navbar -->
+    <div class="top-bar">
+        <div id="container">
+            <div class="top-bar-left">
+                <ul class="menu simple">
+                    <li class="menu-text">WELCOME</li>
+                    <li><a href="#">opportunities</a></li>
+                    <li><a href="#">intel</a></li>
+                </ul>
+            </div>
+            <div class="top-bar-right">
+                <ul class="menu simple">
+                    <li><input type="search" placeholder="Search"></li>
+                    <li><button type="button" class="button">Search</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     
+    <!-- Container -->
+
     <div class="container body-content">
         @RenderBody()
+        
+        <!-- Footer -->
         <hr />
-        <footer>
+        <footer class="panel-footer">
             <p>&copy; @DateTime.Now.Year - Kristiina Tarkkala</p>
         </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/foundation")
     @RenderSection("scripts", required: false)
 </body>
 </html>

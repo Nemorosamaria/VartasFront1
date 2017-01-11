@@ -26,5 +26,10 @@ namespace VartasFront1.Controllers
 
             return View();
         }
+
+        public ActionResult Form()
+        {
+            return View();
+        }
     }
 }
