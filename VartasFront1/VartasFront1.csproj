@@ -270,11 +270,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Form.cshtml" />
-    <Content Include="Views\Forms\Create.cshtml" />
-    <Content Include="Views\Forms\Delete.cshtml" />
-    <Content Include="Views\Forms\Details.cshtml" />
-    <Content Include="Views\Forms\Edit.cshtml" />
-    <Content Include="Views\Forms\Index.cshtml" />
     <Content Include="Views\Data\Create.cshtml" />
     <Content Include="Views\Data\Delete.cshtml" />
     <Content Include="Views\Data\Details.cshtml" />
