@@ -1,0 +1,89 @@
+﻿/* LAYOUT */
+body {
+    padding-bottom: 1em;
+    margin: 0;
+}
+
+
+/*Set padding to keep content from hitting the edges*/
+#details, #delete {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 350px;
+}
+
+
+footer p {
+    text-align: center;
+    color: #5e6568;
+}
+
+h2 {
+    text-align: center;
+    color: #FFFFFF;
+    font-size:large;
+    padding-top: 0,5em;
+    padding-bottom: 0,5em;
+    background-color: #999999;
+}
+
+th {
+    font-size:small;
+    font-weight:bold;
+    text-align:left;
+}
+
+td {
+    font-size:small;
+    text-align:left;
+}
+
+.header {
+
+    margin-top: 1em;
+}
+
+/* Keeps the rows near each other*/
+.row {
+    padding: 0px;
+}
+
+h3 {
+    text-align: center;
+}
+
+.button-group  {
+    float:none;
+    display: table;
+    margin: 0 auto;
+}
+
+#filterRow {
+    display:flex;
+    align-items:center;
+    padding-bottom: 1em;
+    padding-top: 1em;
+
+}
+
+.checkbox {
+    display:flex;
+    align-self:center;
+}
+
+#form {
+    padding-top: 1em;
+}

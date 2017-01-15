@@ -1,49 +1,53 @@
-﻿@{
+﻿@model VartasFront1.Models.Data
+
+@{
     ViewBag.Title = "Welcome";
 }
 
 <div class="body-content" id="content">
+    
+    <h2> Frontend tasks </h2>
 
 
+    <div class="row">
+        <div class="large-12 medium-12 columns">
 
-    <!-- Table, yet empty one-->
-    <div class="row" id="datatable">
-        <div class="large-12 columns">
-            <table>
-                <thead>
-                    <tr>
-                        <th>1st</th>
-                        <th>2nd</th>
-                        <th>3rd</th>
-                    </tr>
-                </thead>
-                <tr>
-                    <td>data</td>
-                    <td>data</td>
-                    <td>data</td>
-                </tr>
-                <tr>
-                    <td>data</td>
-                    <td>data</td>
-                    <td>data</td>
-                </tr>
-                <tr>
-                    <td>data</td>
-                    <td>data</td>
-                    <td>data</td>
-                </tr>
-                <tfoot>
-                    <tr>
-                        <th>Total</th>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tfoot>
-
-            </table>
-        </div>
-    </div>
-
+            <!-- Table, yet empty one-->
+            <div class="row" id="datatable">
+                <div class="large-12 columns">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>1st</th>
+                                <th>2nd</th>
+                                <th>3rd</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>data</td>
+                            <td>data</td>
+                            <td>data</td>
+                        </tr>
+                        <tr>
+                            <td>data</td>
+                            <td>data</td>
+                            <td>data</td>
+                        </tr>
+                        <tr>
+                            <td>data</td>
+                            <td>data</td>
+                            <td>data</td>
+                        </tr>
+                        <tfoot>
+                            <tr>
+                                <th>Total</th>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
             <div class="row">
                 <div class="large-6 medium-6 columns">
                     <!-- onclick alert should work through a Model -->
@@ -51,142 +55,144 @@
                         <span class="input-group-label">Filter</span>
                         <input class="input-group-field" type="text">
                         <div class="input-group-button">
-                            <input type="button" class="button" value="Filter" onclick="alert('Cannot connect to database')"">
+                            <input type="button" class="button" value="Filter" onclick="alert('Cannot connect to database')">
                         </div>
                     </div>
                 </div>
             </div>
 
-
-  
-    <div class="row">
-            <br /><br />
-            <h3>Add a product</h3>
-    </div>
-
-
-    <!-- Form for adding a product.
-           Model FormData handles the values
-           FormController handles the actions. -->
-
-<div class="row">
-    <div class="large-12 medium-12 columns">
-        <form method=post action="/Form/FormOne">
-            
             <div class="row">
-                <div class="large-4 medium-4 columns">
-                    <label class="text-right middle">ID</label>
-                </div>
-                <div class="large-8 medium-8 columns">
-                    <input type="number" name="FormDataId" />
-                </div>
+                <br /><br />
+                <h3>Add a product</h3>
             </div>
-           
-             <div class="row">
-                <div class="large-4 medium-4 columns">
-                    <label class="text-right middle">Product Name</label>
-                </div>
-                <div class="large-8 medium-8 columns">
-                    <input type="text" name="prNameData" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-4 medium-4 columns">
-                    <label class="text-right middle">EAN Code</label>
-                </div>
-                <div class="large-8 medium-8 columns">
-                    <input type="text" name="prEANData" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-4 medium-4 columns">
-                    <label class="text-right middle">Product Key</label>
-                </div>
-                <div class="large-8 medium-8 columns">
-                    <input type="text" name="prCodeData" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-4 medium-4 columns">
-                    <label class="text-right middle">Manufacturer</label>
-                </div>
-                <div class="large-8 medium-8 columns">
-                    <input type="text" name="prManufacturerData" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-4 medium-4 columns">
-                    <label class="text-right middle">Category</label>
-                </div>
-                <div class="large-8 medium-8 columns">
-                    <select name="prCategoryData">
-                        <option selected value="Components">Components</option>
-                        <option value="Computers">Computers</option>
-                        <option value="Cooling systems">Cooling systems</option>
-                        <option value="Peripheral devices">Peripheral devices</option>
-                        <option value="Softwares">Softwares</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-4 medium-4 columns">
-                    <label class="text-right middle">Price</label>
-                </div>
-                <div class="large-8 medium-8 columns">
-                    <input type="text" name="prPriceData" />
-                </div>
-            </div>
-            <!-- Warranty information -->
-            <div class="row" id="warranty">
-                <div class="large-4 medium-4 columns">
-                    <label class="text-right middle">Warranty</label>
-                </div>
-                    <div class="large-1 medium-1 columns">
-                        <input type="checkbox" name="prWarrantyData" />
-                    </div>
-                    <div class="large-3 medium-3 columns">
-                        <input type="number" name="prWarMonthData" placeholder="months"/>
-                    </div>
-                <div class="large-4 columns">
-                    <!-- nothing-->
-                </div>
-            <!-- Product Type Radiobuttons -->
-            </div>
-            <div class="row">
-                <div class="large-4 medium-4 columns">
-                    <label class="text-right middle">Type</label>
-                </div>
-                <div class="large-8 medium-8 columns">
-                    <input type="radio" name="prIsStorageProductData" value="productStorage" /><label>In standing selection</label>
-                    <input type="radio" name="prIsStorageProductData" value="productOrder" /><label>Not in standing selection</label>
-                </div>   
-            </div>
-            <!-- Storage information  -->
-            <div class="row" id="storage">
-                <div class="large-4 medium-4 columns">
-                    <label class="text-right middle">In Stock</label>
-                </div>
-                <div class="large-1 medium-1 columns">
-                    <input type="checkbox" name="prSaldoPositiveData" />
-                </div>
-                <div class="large-3 medium-3 columns">
-                    <input type="number" name="prSaldoData" placeholder="pcs" />
-                </div>
-                <div class="large-4 columns">
-                    <!-- nothing here-->
-                </div>
-            </div>
+            <!-- Form for adding a product.
+           Model Data handles the values
+           DataController handles the actions. 
+                
+                Form can't be submitted right now. -->
             <div class="row">
                 <div class="large-12 medium-12 columns">
-                    <div class="button-group">
-                        <button type="submit" class="button">Submit</button>
-                        <button type="reset" class="secondary button">Clear</button>
-                    </div>
+                    <form method=post action="~/Views/Home">
+
+                        <div class="row">
+                            <div class="large-4 medium-4 columns">
+                                <label class="text-right middle">ID</label>
+                            </div>
+                            <div class="large-8 medium-8 columns">
+                                <input type="number" name="FormDataId" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="large-4 medium-4 columns">
+                                <label class="text-right middle">Product Name</label>
+                            </div>
+                            <div class="large-8 medium-8 columns">
+                                <input type="text" name="prNameData" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-4 medium-4 columns">
+                                <label class="text-right middle">EAN Code</label>
+                            </div>
+                            <div class="large-8 medium-8 columns">
+                                <input type="text" name="prEANData" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-4 medium-4 columns">
+                                <label class="text-right middle">Product Key</label>
+                            </div>
+                            <div class="large-8 medium-8 columns">
+                                <input type="text" name="prCodeData" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-4 medium-4 columns">
+                                <label class="text-right middle">Manufacturer</label>
+                            </div>
+                            <div class="large-8 medium-8 columns">
+                                <input type="text" name="prManufacturerData" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-4 medium-4 columns">
+                                <label class="text-right middle">Category</label>
+                            </div>
+                            <div class="large-8 medium-8 columns">
+                                <select name="prCategoryData">
+                                    <option selected value="Components">Components</option>
+                                    <option value="Computers">Computers</option>
+                                    <option value="Cooling systems">Cooling systems</option>
+                                    <option value="Peripheral devices">Peripheral devices</option>
+                                    <option value="Softwares">Softwares</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-4 medium-4 columns">
+                                <label class="text-right middle">Price</label>
+                            </div>
+                            <div class="large-8 medium-8 columns">
+                                <input type="text" name="prPriceData" />
+                            </div>
+                        </div>
+                        <!-- Warranty information -->
+                        <div class="row" id="warranty">
+                            <div class="large-4 medium-4 columns">
+                                <label class="text-right middle">Warranty</label>
+                            </div>
+                            <div class="large-1 medium-1 columns">
+                                <input type="checkbox" name="prWarrantyData" />
+                            </div>
+                            <div class="large-3 medium-3 columns">
+                                <input type="number" name="prWarMonthData" placeholder="months" />
+                            </div>
+                            <div class="large-4 columns">
+                                <!-- nothing-->
+                            </div>
+                            <!-- Product Type Radiobuttons -->
+                        </div>
+                        <div class="row">
+                            <div class="large-4 medium-4 columns">
+                                <label class="text-right middle">Type</label>
+                            </div>
+                            <div class="large-8 medium-8 columns">
+                                <input type="radio" name="prIsStorageProductData" value="productStorage" /><label>In standing selection</label>
+                                <input type="radio" name="prIsStorageProductData" value="productOrder" /><label>Not in standing selection</label>
+                            </div>
+                        </div>
+                        <!-- Storage information  -->
+                        <div class="row" id="storage">
+                            <div class="large-4 medium-4 columns">
+                                <label class="text-right middle">In Stock</label>
+                            </div>
+                            <div class="large-1 medium-1 columns">
+                                <input type="checkbox" name="prSaldoPositiveData" />
+                            </div>
+                            <div class="large-3 medium-3 columns">
+                                <input type="number" name="prSaldoData" placeholder="pcs" />
+                            </div>
+                            <div class="large-4 columns">
+                                <!-- nothing here-->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-12 medium-12 columns">
+                                <div class="button-group">
+                                    <button type="button" class="button" onclick="alert('Cannot connect to database')">Submit</button>
+                                 </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </form>
+
+
+
+        </div>
     </div>
-</div> 
+        
 
     
 

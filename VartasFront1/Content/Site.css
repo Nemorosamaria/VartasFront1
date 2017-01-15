@@ -16,12 +16,6 @@ body {
     margin: 0;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -40,12 +34,6 @@ textarea {
 #filter {
     padding-bottom: 15px;
     padding-top: 15px;
-}
-
-/* navigation bar's color settings */
-.top bar, .menu simple, .top-bar left, .top-bar right, nav, .top-bar ul, .topbar a, .topbar li  {
-    background-color:#dee1e2;
-    color: #ffffff;
 }
 
 footer p {
@@ -71,6 +59,15 @@ footer p {
 
 h3 {
     text-align: center;
+}
+
+h2 {
+    text-align: center;
+    color: #FFFFFF;
+    font-size:large;
+    padding-top: 0,5em;
+    padding-bottom: 0,5em;
+    background-color: #999999;
 }
 
 .button-group  {

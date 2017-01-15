@@ -1,0 +1,113 @@
+﻿@model VartasFront1.Models.Data
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Data</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.prNameData)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prNameData)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prEANData)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prEANData)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prCodeData)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prCodeData)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prManufacturerData)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prManufacturerData)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prCategoryData)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prCategoryData)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prPriceData)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prPriceData)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prWarrantyData)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prWarrantyData)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prWarMonthData)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prWarMonthData)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prIsStorageProductData)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prIsStorageProductData)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prSaldoPositiveData)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prSaldoPositiveData)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prSaldoData)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prSaldoData)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

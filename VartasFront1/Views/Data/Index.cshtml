@@ -1,0 +1,94 @@
+﻿@model IEnumerable<VartasFront1.Models.Data>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.prNameData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prEANData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prCodeData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prManufacturerData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prCategoryData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prPriceData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prWarrantyData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prWarMonthData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prIsStorageProductData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prSaldoPositiveData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prSaldoData)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.prNameData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prEANData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prCodeData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prManufacturerData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prCategoryData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prPriceData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prWarrantyData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prWarMonthData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prIsStorageProductData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prSaldoPositiveData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prSaldoData)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FormDataId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FormDataId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FormDataId })
+        </td>
+    </tr>
+}
+
+</table>

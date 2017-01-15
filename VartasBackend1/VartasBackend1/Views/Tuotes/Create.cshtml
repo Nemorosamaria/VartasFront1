@@ -1,0 +1,183 @@
+﻿@model VartasBackend1.Models.Tuote
+
+@{
+    ViewBag.Title = "Add a product";
+}
+
+<div class="header">
+    <h2>Add a new product</h2>
+</div>
+
+<!-- Form for adding a product.
+           Model Tuote handles the values
+           TuotesController handles the actions. -->
+    <div class="body-content" id="form">
+        <div class="row">
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <!-- TuoteId luodaan automaattisesti-->
+                <div class="large-12 medium-12 columns">
+                    <!-- Tuotteen nimi -->
+                    <div class="row">
+                        <div class="large-4 medium-4 columns">
+                            <label class="text-right middle">Product Name</label>
+                        </div>
+                        <div class="large-4 medium-4 columns">
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div class="large-4 medium-4 columns">
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                    <!-- Valmistajan tuotekoodi -->
+                    <div class="row">
+                        <div class="large-4 medium-4 columns">
+                            <label class="text-right middle">Manufacturer's product key</label>
+                        </div>
+                        <div class="large-4 medium-4 columns">
+                            @Html.EditorFor(model => model.ProductKey, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div class="large-4 medium-4 columns">
+                            @Html.ValidationMessageFor(model => model.ProductKey, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                    <!-- Valmistaja -->
+                    <div class="row">
+                        <div class="large-4 medium-4 columns">
+                            <label class="text-right middle">Manufacturer</label>
+                        </div>
+                        <div class="large-4 medium-4 columns">
+                            @Html.EditorFor(model => model.Manufacturer, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div class="large-4 medium-4 columns">
+                            @Html.ValidationMessageFor(model => model.Manufacturer, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <!-- Kategoria -->
+                    <div class="row">
+                        <div class="large-4 medium-4 columns">
+                            <label class="text-right middle">Category</label>
+                        </div>
+
+                                   
+                        <div class="large-4 medium-4 columns">
+                            <!-- I would need a properly working dropdown menu system here, which returned string data into database. -->
+                            @Html.EditorFor(model=> model.Category, new { htmlAttributes = new {@class = "form-control"}})                    
+                        </div>
+                        <div class="large-4 medium-4 columns">
+                            @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <!-- Hinta -->
+                    <div class="row">
+                        <div class="large-4 medium-4 columns">
+                            <label class="text-right middle">Price</label>
+                        </div>
+                        <div class="large-4 medium-4 columns">
+                            @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control", placeholder = "0.00" } })
+                        </div>
+                        <div class="large-4 medium-4 columns">
+                            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <!-- Varastotuote -->
+                    <div class="row">
+                        <div class="large-4 medium-4 columns">
+                            <label class="text-right middle">Storage Product</label>
+                        </div>
+                        <div class="large-4 medium-4 columns">
+                            @Html.EditorFor(model => model.IsStorageProduct)
+                        </div>
+                        <div class="large-4 medium-4 columns">
+                            @Html.ValidationMessageFor(model => model.IsStorageProduct, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <!-- Varastotilanne -->
+                    <div class="row" id="storage">
+                        <div class="large-4 medium-4 columns">
+                            <label class="text-right middle">In Stock</label>
+                        </div>
+                        <div class="large-4 medium-4 columns" id="stockCenter">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.IsPrSaldoPositive)
+                            </div>
+                            <div id="saldoField">
+                                @Html.EditorFor(model => model.Saldo, new { htmlAttributes = new { @class = "form-control", placeholder="pcs" } })
+                            </div>
+                        </div>
+                        <div class="large-4 columns">
+                            @Html.ValidationMessageFor(model => model.Saldo, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <!-- Tuotekuvaus. Determine the size in Site.css -->
+                    <div class="row">
+                        <div class="large-4 medium-4 columns">
+                            <label class="text-right middle">Description</label>
+                        </div>
+                        <div class="large-4 medium-4 columns" id="descriptionBox">
+                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div class="large-4 medium-4 columns">
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                    <!-- Viimeksi muokattu -->
+                    <div class="row">
+                        <div class="large-4 medium-4 columns">
+                            <label class="text-right middle">Edited</label>
+                        </div>
+                        <div class="large-4 medium-4 columns">
+                            @Html.EditorFor(model => model.Edited, new { htmlAttributes = new { @class = "form-control", placeholder="yyyy/mm/dd" } })
+                        </div>
+                        <div class="large-4 medium-4 columns">
+                            @Html.ValidationMessageFor(model => model.Edited, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <!-- Viimeksi muokannut -->
+                    <div class="row">
+                        <div class="large-4 columns">
+                            <label class="text-right middle">by</label>
+                        </div>
+                        <div class="large-4 medium-4 columns">
+                            @Html.EditorFor(model => model.Editor, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div class="large-4 medium-4 columns">
+                            @Html.ValidationMessageFor(model => model.Editor, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <!-- Submit and Clear -buttons -->
+                    <div class="row">
+                        <div class="large-12 medium-12 columns">
+                            <div class="button-group">
+                                <button type="submit" class="button">Save</button>
+                                <button type="reset" class="secondary button" onclick="reset()">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <!-- Function for clearing the form -->
+            <script>
+                function reset() {
+                document.getElementById("form").reset();
+                }
+            </script>
+
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+    </div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

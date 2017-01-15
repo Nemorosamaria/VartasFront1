@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace VartasFront1
+namespace VartasBackend1
 {
     public class BundleConfig
     {
@@ -19,17 +19,15 @@ namespace VartasFront1
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-            "~/Content/reset.css",
-            "~/Content/foundation.min.css",
-            "~/Content/foundation.css",
-            "~/Content/Site.css"));
-
             bundles.Add(new ScriptBundle("~/bundles/foundation").Include(
-                        "~/Scripts/foundation/foundation.js"));
+                      "~/Scripts/foundation.min.js",
+                      "~/Scripts/foundation.js"));
 
-            
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/reset.css",
+                      "~/Content/foundation.min.css",
+                      "~/Content/foundation.css",
+                      "~/Content/site.css"));
         }
     }
 }
